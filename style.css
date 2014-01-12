@@ -1,0 +1,27 @@
+a {
+    color: cornflowerblue;
+}
+#field {
+    width: 499px;
+    height: 499px;
+    border: 1px solid aqua;
+    position: relative;
+}
+.snake, .snake2, .snake3 {
+    width: 9px;
+    height: 9px;
+    background: lawngreen;
+    position: absolute;
+    border: 1px solid cornflowerblue;
+	z-index:20;
+}
+.snake3{
+	background: black;
+	z-index:10;
+}
+.food {
+    width: 10px;
+    height: 10px;
+    background: deeppink;
+    position: absolute;
+}

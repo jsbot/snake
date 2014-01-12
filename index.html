@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>snake</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+
+<legend>
+    Snake
+</legend>
+<style>
+
+</style>
+<div id="field">
+
+</div>
+<a id="top">GO TOP</a></br>
+<a id="left">GO LEFT</a></br>
+<a id="right">GO RIGHT</a></br>
+<a id="down">GO DOWN</a></br>
+<div>
+    <input id="posX" type="text" value="" placeholder="position x"/>
+    <input id="posY" type="text" value="" placeholder="position y"/>
+    <a id="grow">GROW</a></br>
+</div>
+
+<script src="settings.js"></script>
+<script src="snake/service.js"></script>
+<script src="snake/controls.js"></script>
+<script src="snake/snakeFood.js"></script>
+<script src="snake/snake.js"></script>
+<script>
+    window.onload = initialize(10, 0);
+
+    function initialize(startX, startY, stgs) {
+
+        $(settings.field).html("");
+        Snake = new snake("snake");
+	    Snake2 = new snake("snake2");
+	    Snake3 = new snake("snake3");
+        Snake.draw([
+            [10, 110],
+            [10, 100],
+            [10, 90],
+            [10, 80],
+            [10, 70],
+            [10, 60],
+            [10, 50],
+            [10, 40],
+            [10, 30],
+            [10, 20],
+            [10, 10]
+        ]);
+		Snake.competitors.push([
+			[40, 110],
+			[40, 100],
+			[40, 90],
+			[40, 80],
+			[40, 70],
+			[40, 60],
+			[40, 50],
+			[40, 40],
+			[40, 30],
+			[40, 20],
+			[40, 10]
+		]);
+	    Snake2.draw([
+			[40, 110],
+			[40, 100],
+			[40, 90],
+			[40, 80],
+			[40, 70],
+			[40, 60],
+			[40, 50],
+			[40, 40],
+			[40, 30],
+			[40, 20],
+			[40, 10]
+		]);
+	    Snake3.draw([
+			[10, 140],
+			[20, 140],
+			[30, 140],
+			[40, 140],
+			[50, 140]
+		]);
+Snake.competitors.push([
+ [10, 140],
+ [20, 140],
+ [30, 140],
+ [40, 140],
+ [50, 140]
+		]);
+
+        Food = new food();
+        Food.create([90, 90]);
+    }
+	/*var int3 = setInterval(function(){
+		Snake3.run('right');
+	},1000);*/
+</script>
+</body>
+</html>
